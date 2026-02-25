@@ -9,6 +9,25 @@
 
 body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin: 0; text-transform: uppercase; color: var(--black); }
 
+/* Dimensioni Logo */
+.logo-grafichello {
+    height: 35px; /* Regola l'altezza come preferisci */
+    width: auto;
+    fill: var(--black); /* Nero di default */
+    transition: fill 0.3s ease;
+}
+
+/* Quando il menu CORE è attivo, il logo diventa bianco */
+.menu-overlay.active ~ .nav-elite .logo-grafichello {
+    fill: var(--white);
+}
+
+/* Togliamo l'effetto lettere che cambiano nel menu overlay */
+.nav-massive li a:hover {
+    color: var(--cyan); /* Solo cambio colore, niente outline */
+    -webkit-text-stroke: 0; 
+}
+
 /* Nav & CORE/HOME */
 .nav-elite { padding: 30px; border-bottom: 2px solid var(--black); position: sticky; top: 0; background: white; z-index: 1000; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
@@ -28,7 +47,10 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 /* Hero */
 .hero-brutal { padding: 120px 30px; border-bottom: 2px solid var(--black); }
 .hero-title { font-size: clamp(3rem, 12vw, 10rem); font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin: 0; }
-.stroke { color: white; -webkit-text-stroke: 2px var(--black); }
+.stroke {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--black);
+}
 .hero-sub { margin-top: 30px; font-weight: 300; letter-spacing: 3px; font-size: 1.1rem; color: var(--gray-meta); }
 
 /* CMYK Cards */
