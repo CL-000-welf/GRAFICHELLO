@@ -61,11 +61,12 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     color: transparent;
     -webkit-text-stroke: 2px var(--black);
     display: inline-block;
-    /* Evita che le punte delle lettere si allunghino troppo */
-    stroke-linejoin: round; 
+    /* Forza il bordo a restare arrotondato negli angoli, evitando che le punte si incrocino */
+    stroke-linejoin: round;
     -webkit-stroke-linejoin: round;
-    /* Migliora il rendering sui browser moderni */
+    /* Impedisce al bordo di espandersi eccessivamente */
     paint-order: stroke fill;
+    /* Migliora la spaziatura dei caratteri basata sui dati del font */
     text-rendering: optimizeLegibility;
 }
 
