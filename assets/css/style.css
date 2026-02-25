@@ -1,70 +1,97 @@
 :root {
-    --industrial-dark: #121212;
-    --accent-blue: #0066FF;
-    --accent-pink: #FF0055;
+    --bg: #f2f2f2;
+    --black: #000000;
+    --accent: #ff3e00;
 }
 
 body {
+    background: var(--bg);
+    color: var(--black);
     font-family: 'Lexend Deca', sans-serif;
-    color: var(--industrial-dark);
+    margin: 0;
+    text-transform: uppercase;
+    overflow-x: hidden;
 }
 
-.fw-black { font-weight: 900; }
-
-/* Hero Effect */
-.hero-industrial {
-    padding: 120px 0;
-    border-bottom: 8px solid var(--industrial-dark);
+/* Navigazione Estrema */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 5px solid var(--black);
 }
 
-.text-stroke {
-    color: white;
-    -webkit-text-stroke: 2px var(--industrial-dark);
-    /* La traccia non altera la struttura delle lettere N ed E */
-    text-shadow: none;
+.e-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
-/* Navbar NYC Style */
-.navbar-brand img {
-    filter: grayscale(1);
-    transition: 0.3s;
-}
-.navbar-brand:hover img {
-    filter: grayscale(0);
-}
-
-.nav-link {
-    letter-spacing: 1px;
-    color: var(--industrial-dark) !important;
-    position: relative;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link:after {
+.e-menu span, .e-menu::before, .e-menu::after {
     content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 1rem;
-    background: var(--industrial-dark);
-    transition: 0.3s;
+    width: 100%;
+    height: 4px;
+    background: var(--black);
 }
 
-.nav-link:hover:after {
-    width: calc(100% - 2rem);
+/* Hero Typography */
+.main-header { padding: 60px 30px; }
+.giant-text {
+    font-size: 15vw;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+}
+.stroke {
+    color: var(--bg);
+    -webkit-text-stroke: 3px var(--black);
 }
 
-/* Card Style Industrial */
-.service-card {
-    background: white;
-    border: 1px solid #dee2e6;
-    border-radius: 0; /* Angoli vivi per stile industriale */
-    padding: 3rem;
-    transition: 0.4s;
+.hero-meta {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 2px solid var(--black);
+    padding-top: 20px;
 }
 
-.service-card:hover {
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
-    transform: translate(-5px, -5px);
+/* Grid System Brutalista */
+.grid-system {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 5px solid var(--black);
+}
+
+.grid-item {
+    border-right: 2px solid var(--black);
+    border-bottom: 5px solid var(--black);
+    padding: 40px;
+    transition: background 0.2s;
+}
+
+.grid-item:hover {
+    background: var(--black);
+    color: var(--bg);
+}
+
+.grid-item.tall { grid-column: span 2; grid-row: span 2; }
+
+.label { font-size: 0.7rem; font-weight: 900; background: var(--black); color: var(--bg); padding: 2px 5px; }
+
+/* Footer Raw */
+.raw-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 30px;
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .grid-system { grid-template-columns: 1fr; }
+    .giant-text { font-size: 18vw; }
+    .hero-meta { flex-direction: column; align-items: flex-start; }
 }
