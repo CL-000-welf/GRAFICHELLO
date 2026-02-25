@@ -77,6 +77,26 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     color: var(--gray-meta); 
 }
 
+/* Gestione interruzioni riga: attive solo su mobile */
+.m-break {
+    display: block;
+}
+
+/* Su schermi grandi (Desktop), ignoriamo gli 'a capo' per far scorrere il testo */
+@media (min-width: 768px) {
+    .m-break {
+        display: none;
+    }
+    .hero-sub {
+        max-width: 800px; /* Evita che la riga diventi infinita */
+    }
+}
+
+/* Fix per la N troppo distante: se 0.03em è ancora troppo, prova 0.02em */
+.hero-title span[style*="margin-right"] {
+    margin-right: 0.03em !important; 
+}
+
 /* CMYK Cards Base */
 .grid-cmyk { display: grid; grid-template-columns: repeat(2, 1fr); }
 .cmyk-card { min-height: 450px; padding: 60px; border-right: 1px solid #eee; border-bottom: 2px solid var(--black); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: white; }
