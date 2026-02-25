@@ -61,16 +61,16 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     color: transparent;
     -webkit-text-stroke: 2px var(--black);
     display: inline-block;
-    /* Forza il bordo a restare arrotondato negli angoli, evitando che le punte si incrocino */
+    
+    /* TRUCCO FINALE: Arrotonda gli angoli e forza il limite della punta */
     stroke-linejoin: round;
     -webkit-stroke-linejoin: round;
-    /* Impedisce al bordo di espandersi eccessivamente */
+    stroke-miterlimit: 1;
+    
+    /* Aumentiamo il margine solo tra le lettere per compensare lo spessore del bordo */
+    letter-spacing: 0.1em; 
+    
     paint-order: stroke fill;
-    /* Migliora la spaziatura dei caratteri basata sui dati del font */
-    text-rendering: optimizeLegibility;
-    -webkit-text-stroke: 2px var(--black);
-    stroke-miterlimit: 1; /* Taglia le punte delle lettere che "escono" troppo */
-    -webkit-stroke-miterlimit: 1;
 }
 
 .hero-sub { 
