@@ -11,21 +11,15 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 
 /* Dimensioni Logo */
 .logo-grafichello {
-    height: 35px; /* Regola l'altezza come preferisci */
+    height: 35px;
     width: auto;
-    fill: var(--black); /* Nero di default */
+    fill: var(--black);
     transition: fill 0.3s ease;
 }
 
 /* Quando il menu CORE è attivo, il logo diventa bianco */
 .menu-overlay.active ~ .nav-elite .logo-grafichello {
     fill: var(--white);
-}
-
-/* Togliamo l'effetto lettere che cambiano nel menu overlay */
-.nav-massive li a:hover {
-    color: var(--cyan); /* Solo cambio colore, niente outline */
-    -webkit-text-stroke: 0; 
 }
 
 /* Nav & CORE/HOME */
@@ -42,34 +36,72 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .nav-massive { list-style: none; padding: 0; }
 .nav-massive li { margin-bottom: 20px; }
 .nav-massive li a { color: white; text-decoration: none; font-size: 6vw; font-weight: 900; line-height: 1; transition: 0.3s; }
-.nav-massive li a:hover { color: var(--cyan); }
+
+/* --- HOVER DINAMICO MENU CMYK --- */
+.nav-massive li:nth-child(1) a:hover { color: var(--cyan); }
+.nav-massive li:nth-child(2) a:hover { color: var(--magenta); }
+.nav-massive li:nth-child(3) a:hover { color: var(--yellow); }
+.nav-massive li:nth-child(4) a:hover { color: #555; } /* Grigio per Cyber su fondo nero */
 
 /* Hero */
 .hero-brutal { padding: 120px 30px; border-bottom: 2px solid var(--black); }
-.hero-title { font-size: clamp(3rem, 12vw, 10rem); font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin: 0; }
+.hero-title { 
+    font-size: clamp(3rem, 12vw, 10rem); 
+    font-weight: 900; 
+    line-height: 0.85; 
+    letter-spacing: 0.02em; /* FIX per distanziare N ed E */
+    margin: 0; 
+}
 .stroke {
     color: transparent;
     -webkit-text-stroke: 2px var(--black);
+    display: inline-block;
 }
 .hero-sub { margin-top: 30px; font-weight: 300; letter-spacing: 3px; font-size: 1.1rem; color: var(--gray-meta); }
 
-/* CMYK Cards */
+/* CMYK Cards Base */
 .grid-cmyk { display: grid; grid-template-columns: repeat(2, 1fr); }
-.cmyk-card { min-height: 450px; padding: 60px; border-right: 1px solid #eee; border-bottom: 2px solid var(--black); transition: 0.4s ease; }
+.cmyk-card { min-height: 450px; padding: 60px; border-right: 1px solid #eee; border-bottom: 2px solid var(--black); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: white; }
 .header-card { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
 .cmyk-num { font-size: 1.2rem; font-weight: 900; }
 .card-body i { font-size: 2.5rem; }
-.content-card h2 { font-weight: 900; font-size: 2.2rem; margin: 0; line-height: 1; }
-.sub-it { font-size: 0.85rem; color: var(--gray-meta); display: block; margin-top: 10px; font-weight: 700; }
-.content-card p { margin-top: 25px; text-transform: none; font-size: 1.05rem; line-height: 1.6; font-weight: 300; max-width: 500px; color: #333; }
+.content-card h2 { font-weight: 900; font-size: 2.2rem; margin: 0; line-height: 1; transition: color 0.3s; }
+.sub-it { font-size: 0.85rem; color: var(--gray-meta); display: block; margin-top: 10px; font-weight: 700; transition: color 0.3s; }
+.content-card p { margin-top: 25px; text-transform: none; font-size: 1.05rem; line-height: 1.6; font-weight: 300; max-width: 500px; color: #333; transition: color 0.3s; }
 
-/* Colori delle icone e numeri */
+/* Colori delle icone e numeri di default */
 .c-text { color: var(--cyan); }
 .m-text { color: var(--magenta); }
 .y-text { color: var(--yellow); }
 .k-text { color: var(--black); }
 
-.cmyk-card:hover { background: #fafafa; }
+/* --- HOVER DINAMICO CARD CMYK --- */
+/* 01 Cyan */
+.cmyk-card#creative:hover { background-color: var(--cyan); border-color: var(--cyan); }
+/* 02 Magenta */
+.cmyk-card#digital:hover { background-color: var(--magenta); border-color: var(--magenta); }
+/* 03 Yellow */
+.cmyk-card#visual:hover { background-color: var(--yellow); border-color: var(--yellow); }
+/* 04 Black */
+.cmyk-card#security:hover { background-color: var(--black); border-color: var(--black); }
+
+/* Cambio colore testi in bianco per hover (tranne il giallo) */
+.cmyk-card:hover h2, 
+.cmyk-card:hover p, 
+.cmyk-card:hover .sub-it, 
+.cmyk-card:hover .cmyk-num, 
+.cmyk-card:hover i { 
+    color: white !important; 
+}
+
+/* Fix per card Gialla (testo nero su giallo) */
+.cmyk-card#visual:hover h2, 
+.cmyk-card#visual:hover p, 
+.cmyk-card#visual:hover .sub-it, 
+.cmyk-card#visual:hover .cmyk-num, 
+.cmyk-card#visual:hover i { 
+    color: var(--black) !important; 
+}
 
 /* Responsive */
 @media (max-width: 992px) {
