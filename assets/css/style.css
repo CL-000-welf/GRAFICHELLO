@@ -68,6 +68,9 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     paint-order: stroke fill;
     /* Migliora la spaziatura dei caratteri basata sui dati del font */
     text-rendering: optimizeLegibility;
+    -webkit-text-stroke: 2px var(--black);
+    stroke-miterlimit: 1; /* Taglia le punte delle lettere che "escono" troppo */
+    -webkit-stroke-miterlimit: 1;
 }
 
 .hero-sub { 
