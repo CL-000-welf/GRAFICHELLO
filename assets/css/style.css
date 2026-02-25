@@ -44,7 +44,6 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .nav-massive li:nth-child(4) a:hover { color: #555; } /* Grigio per Cyber su fondo nero */
 
 /* --- SEZIONE HERO --- */
-
 .hero-brutal { 
     padding: 120px 30px; 
     border-bottom: 2px solid var(--black); 
@@ -54,17 +53,24 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     font-size: clamp(3rem, 12vw, 10rem); 
     font-weight: 900; 
     line-height: 0.85; 
-    /* Aumentiamo il respiro per evitare sovrapposizioni tra le lettere */
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.04em; 
     margin: 0; 
 }
 
 .stroke {
     color: transparent;
     -webkit-text-stroke: 2px var(--black);
-    /* Forza il browser a gestire meglio il disegno dei contorni */
-    paint-order: stroke fill;
     display: inline-block;
+    
+    /* PROPRIETÀ CHIAVE: */
+    /* 1. Impedisce alle punte delle lettere (miter) di allungarsi e toccarsi */
+    stroke-linejoin: round; 
+    
+    /* 2. Forza il rendering del bordo dietro l'eventuale riempimento */
+    paint-order: stroke fill;
+    
+    /* 3. Corregge il posizionamento dei glifi */
+    text-rendering: optimizeLegibility;
 }
 
 .hero-sub { 
