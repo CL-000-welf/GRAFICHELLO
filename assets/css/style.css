@@ -1,97 +1,85 @@
 :root {
-    --bg: #f2f2f2;
     --black: #000000;
-    --accent: #ff3e00;
+    --white: #ffffff;
+    --gray-light: #f4f4f4;
+    --accent-cyber: #0044ff; /* Blu elettrico per Cyber */
 }
 
 body {
-    background: var(--bg);
-    color: var(--black);
+    background-color: var(--white);
     font-family: 'Lexend Deca', sans-serif;
-    margin: 0;
+    color: var(--black);
     text-transform: uppercase;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* Navigazione Estrema */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    border-bottom: 5px solid var(--black);
+/* Header & Logo */
+.nav-industrial {
+    padding: 30px 15px;
+    border-bottom: 2px solid var(--black);
+}
+.brand img { height: 40px; }
+
+/* Hamburger Menu (La E del logo) */
+.e-bar {
+    width: 25px; height: 18px;
+    display: block;
+    border-top: 3px solid var(--black);
+    border-bottom: 3px solid var(--black);
+    position: relative;
+    cursor: pointer;
+}
+.e-bar::after {
+    content: ''; position: absolute; top: 50%;
+    width: 100%; height: 3px; background: var(--black);
+    transform: translateY(-50%);
 }
 
-.e-menu {
-    width: 30px;
-    height: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.e-menu span, .e-menu::before, .e-menu::after {
-    content: '';
-    width: 100%;
-    height: 4px;
-    background: var(--black);
-}
-
-/* Hero Typography */
-.main-header { padding: 60px 30px; }
-.giant-text {
-    font-size: 15vw;
+/* Hero Typography - WEB YOUR BUSINESS */
+.hero-block { padding: 80px 15px; }
+.giant-headline {
+    font-size: clamp(3rem, 11vw, 10rem);
     font-weight: 900;
-    line-height: 0.8;
-    letter-spacing: -0.05em;
+    line-height: 0.85;
+    letter-spacing: -3px;
 }
-.stroke {
-    color: var(--bg);
-    -webkit-text-stroke: 3px var(--black);
+.vuoto {
+    color: var(--white);
+    -webkit-text-stroke: 2px var(--black);
 }
 
-.hero-meta {
+.hero-details {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-top: 2px solid var(--black);
-    padding-top: 20px;
 }
 
-/* Grid System Brutalista */
-.grid-system {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 5px solid var(--black);
-}
+.tagline { font-size: 1rem; font-weight: 300; letter-spacing: 2px; max-width: 600px; }
+.meta-info { font-weight: 900; font-size: 0.8rem; }
 
-.grid-item {
-    border-right: 2px solid var(--black);
-    border-bottom: 5px solid var(--black);
-    padding: 40px;
-    transition: background 0.2s;
-}
+/* Grid Cells */
+.cell { min-height: 400px; display: flex; align-items: stretch; transition: 0.3s; }
+.cell-inner { padding: 50px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
 
-.grid-item:hover {
-    background: var(--black);
-    color: var(--bg);
-}
+.border-b { border-bottom: 2px solid var(--black); }
+.border-r { border-right: 2px solid var(--black); }
 
-.grid-item.tall { grid-column: span 2; grid-row: span 2; }
+.cell-id { font-size: 0.7rem; font-weight: 900; opacity: 0.4; }
+.cell h2 { font-weight: 900; font-size: 1.8rem; margin: 20px 0; }
+.cell p { font-size: 0.9rem; font-weight: 300; text-transform: none; line-height: 1.6; }
 
-.label { font-size: 0.7rem; font-weight: 900; background: var(--black); color: var(--bg); padding: 2px 5px; }
+/* Hover Effects */
+.cell:hover { background-color: var(--black); color: var(--white); }
+.highlight-cyber:hover { background-color: var(--accent-cyber); }
 
-/* Footer Raw */
-.raw-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 30px;
-    font-weight: 900;
-    font-size: 0.8rem;
-}
+/* Footer */
+.footer-industrial { padding: 40px 15px; font-weight: 900; font-size: 0.8rem; }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
-    .grid-system { grid-template-columns: 1fr; }
-    .giant-text { font-size: 18vw; }
-    .hero-meta { flex-direction: column; align-items: flex-start; }
+@media (max-width: 991px) {
+    .border-r { border-right: none; }
+    .hero-details { flex-direction: column; align-items: flex-start; }
+    .meta-info { margin-top: 20px; }
 }
