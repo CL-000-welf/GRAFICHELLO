@@ -1,76 +1,112 @@
 :root {
-    --black: #000000;
-    --white: #ffffff;
+    --dark: #000000;
+    --gray: #f8f9fa;
+    --text-muted: #666;
 }
 
 body {
     font-family: 'Lexend Deca', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
-    text-transform: uppercase;
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Griglia Industriale */
-.border-bottom-black { border-bottom: 2px solid var(--black); }
-.border-top-black { border-top: 2px solid var(--black); }
-.border-right-black { border-right: 2px solid var(--black); }
-
-@media (max-width: 768px) {
-    .border-right-black { border-right: none; }
+/* Tipografia Hero */
+.hero-section {
+    padding: 120px 0;
+    background: white;
 }
 
-/* Header & Hamburger */
-.navbar-brand img { height: 45px; }
-.e-hamburger {
-    width: 25px; height: 18px;
+.hero-title {
+    font-size: clamp(3rem, 10vw, 8rem); /* Fluido su mobile */
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+.stroke-text {
+    color: white;
+    -webkit-text-stroke: 2px var(--dark);
+    /* La traccia qui non altera N ed E come richiesto */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    color: var(--text-muted);
+}
+
+/* Card Animate Style Agency */
+.card-agency {
+    padding: 3rem;
+    height: 100%;
+    background: var(--gray);
+    border: 1px solid #eee;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.card-agency:hover {
+    background: white;
+    border-color: var(--dark);
+    box-shadow: 30px 30px 0px var(--accent); /* Accento cromatico forte */
+    transform: translate(-10px, -10px);
+}
+
+.card-num {
+    font-weight: 700;
+    font-size: 0.8rem;
     display: block;
-    border-top: 3px solid var(--black);
-    border-bottom: 3px solid var(--black);
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+.card-agency h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-agency p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Header & Menu */
+.nav-link {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    margin: 0 10px;
+}
+
+.btn-contact {
+    background: var(--dark);
+    color: white !important;
+    padding: 10px 25px !important;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background: var(--accent-blue);
+}
+
+/* Custom Menu Icon (La "E" del Logo) */
+.custom-toggler-icon {
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+    border-top: 3px solid var(--dark);
+    border-bottom: 3px solid var(--dark);
     position: relative;
 }
-.e-hamburger::after {
-    content: ''; position: absolute; top: 50%;
-    width: 100%; height: 3px; background: var(--black);
+.custom-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--dark);
+    top: 50%;
     transform: translateY(-50%);
-}
-
-/* Hero Section */
-.hero-wrap { padding: 100px 0; }
-.main-title {
-    font-size: clamp(3.5rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -4px;
-}
-.outline {
-    color: var(--white);
-    -webkit-text-stroke: 2px var(--black);
-}
-
-.main-sub {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-top: 2rem;
-    letter-spacing: 2px;
-}
-
-/* Service Boxes */
-.service-box {
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 300px;
-}
-.service-box:hover {
-    background-color: var(--hover-color);
-    color: var(--white);
-}
-.service-box h2 { font-weight: 900; font-size: 1.8rem; margin: 1.5rem 0; }
-.service-box p { font-size: 0.9rem; font-weight: 300; text-transform: none; }
-.num { font-weight: 900; font-size: 1rem; opacity: 0.3; }
-
-.footer-text { font-weight: 900; font-size: 0.8rem; letter-spacing: 1px; }
-
-/* Responsive tweaks */
-@media (max-width: 576px) {
-    .main-title { letter-spacing: -2px; }
 }
