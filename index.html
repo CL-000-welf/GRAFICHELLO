@@ -3,54 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRAFICHELLO // WEB YOUR BUSINESS</title>
-    <link rel="stylesheet" href="assets/css/style.css"> <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;900&display=swap" rel="stylesheet">
+    <title>GRAFICHELLO | Web Your Business</title>
+    <meta name="description" content="30 anni di evoluzione digitale, creatività e cyber-security.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="top-header">
-    <div class="logo-box">
-        <img src="assets/img/logo_grafichello.png" alt="GRAFICHELLO">
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
+    <div class="container border-bottom-black">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo_grafichello.png" alt="GRAFICHELLO" height="45">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navGrafichello">
+            <span class="e-hamburger"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navGrafichello">
+            <ul class="navbar-nav ms-auto text-uppercase fw-bold">
+                <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </div>
-    <nav class="main-nav">
-        <div class="e-icon"><span></span></div>
-    </nav>
+</nav>
+
+<header class="hero-wrap">
+    <div class="container">
+        <h1 class="main-title">
+            WEB YOUR<br>
+            <span class="filled">BUSI</span><span class="outline">N</span><span class="filled">E</span><span class="outline">SS</span>
+        </h1>
+        <p class="main-sub">30 ANNI DI EVOLUZIONE DIGITALE, CREATIVITÀ E CYBER-SECURITY.</p>
+    </div>
 </header>
 
-<section class="hero-brutal">
-    <h1 class="title-xl">
-        WEB YOUR<br>
-        <span class="busi">BUSI</span><span class="n-stroke">N</span><span class="e-filled">E</span><span class="ss-stroke">SS</span>
-    </h1>
-    <div class="hero-info">
-        <p>30 ANNI DI EVOLUZIONE DIGITALE, CREATIVITÀ E CYBER-SECURITY.</p>
-        <div class="location">MANTOVA_NODE // ESTD 1990</div>
-    </div>
-</section>
-
-<section class="grid-raw">
-    <div class="cell creative">
-        <div class="cell-content">
-            <span class="tag">UNIT_01</span>
-            <h2>CREATIVE & PRINT ENGINEERING</h2>
-            <p>Adobe Suite Master. Chimica cromatica: Cianografiche e Alluminio CMYK. Oltre la stampa comune.</p>
+<main class="container py-5" id="services">
+    <div class="row g-0 border-top-black">
+        <div class="col-md-6 border-right-black border-bottom-black service-box" style="--hover-color: #FF0055;">
+            <div class="p-5">
+                <span class="num">01</span>
+                <h2>CREATIVE IDENTITY & PRINT</h2>
+                <p>Padronanza Adobe Suite. Gestione cianografiche e pannelli alluminio CMYK. Esperienza tipografica pura.</p>
+            </div>
+        </div>
+        <div class="col-md-6 border-bottom-black service-box" style="--hover-color: #0066FF;">
+            <div class="p-5">
+                <span class="num">02</span>
+                <h2>CYBER-SECURITY & RECOVERY</h2>
+                <p>Interventi urgenti malware, audit sistemistici e piani di Disaster Recovery. Sicurezza proattiva.</p>
+            </div>
+        </div>
+        <div class="col-md-6 border-right-black border-bottom-black service-box" style="--hover-color: #00FF95;">
+            <div class="p-5">
+                <span class="num">03</span>
+                <h2>DIGITAL ARCHITECTURE</h2>
+                <p>WordPress, Shopify, PrestaShop. SEO Ranking basato su 30 anni di esperienza reale.</p>
+            </div>
+        </div>
+        <div class="col-md-6 border-bottom-black service-box" style="--hover-color: #FFD600;">
+            <div class="p-5">
+                <span class="num">04</span>
+                <h2>VISUAL & DRONE UNIT</h2>
+                <p>Shooting in studio, foto drone e implementazione AI/Chatbot personalizzati.</p>
+            </div>
         </div>
     </div>
-    <div class="cell security">
-        <div class="cell-content">
-            <span class="tag">UNIT_02</span>
-            <h2>CYBER-SECURITY & RECOVERY</h2>
-            <p>Interventi d'urgenza. Neutralizzazione Malware. Ripristino totale della continuità operativa.</p>
-        </div>
-    </div>
-    </section>
+</main>
 
-<footer>
-    <div class="footer-wrap">
-        <span>© 2026 GRAFICHELLO.IT</span>
-        <span>FACIT IN MANTUA ESTD 1990</span>
+<footer class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
+            <p class="footer-text">© 2026 GRAFICHELLO.IT | FACIT IN MANTUA ESTD 1990</p>
+            <div class="social-links mt-3 mt-md-0">
+                <span>LN</span> / <span>IG</span> / <span>FB</span>
+            </div>
+        </div>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
