@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRAFICHELLO // WEB YOUR BUSINESS</title>
-    
-    <meta name="description" content="30 anni di esperienza in Cyber-Security, Creative Identity e Digital Solutions. Dal 1990, innovazione a Mantova.">
-    <link rel="canonical" href="https://www.grafichello.it/">
-    
+    <meta name="description" content="Oltre 30 anni di esperienza in Cyber-Security, Progettazione Grafica e Soluzioni Digitali. Eccellenza tecnica a Mantova.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,14 +13,14 @@
 
 <nav class="nav-elite">
     <div class="nav-container">
-        <div class="logo-svg">
+        <div class="logo-area">
             <a href="/">
-                <img src="assets/img/logo.svg" alt="Grafichello">
+                <img src="assets/img/logo.svg" alt="Grafichello" id="main-logo">
             </a>
         </div>
         
         <div class="nav-trigger" id="menuToggle">
-            <span class="trigger-text">OPEN_CORE</span>
+            <span class="trigger-text" id="triggerText">CORE</span>
             <div class="dot"></div>
         </div>
     </div>
@@ -31,52 +28,75 @@
 
 <div class="menu-overlay" id="menuOverlay">
     <ul class="nav-massive">
-        <li><a href="#0">01_CREATIVE</a></li>
-        <li><a href="#0">02_SECURITY</a></li>
-        <li><a href="#0">03_DIGITAL</a></li>
-        <li><a href="#0">04_VISUAL</a></li>
+        <li><a href="#creative">01_CREATIVE IDENTITY</a></li>
+        <li><a href="#digital">02_DIGITAL SOLUTIONS</a></li>
+        <li><a href="#visual">03_VISUAL UNIT</a></li>
+        <li><a href="#security">04_CYBER-SECURITY</a></li>
     </ul>
 </div>
 
 <header class="hero-brutal">
     <h1 class="hero-title">
         WEB YOUR<br>
-        <span class="full">BUSI</span><span class="stroke">N</span><span class="full">E</span><span class="stroke">SS</span>
+        <span class="full">BUSI</span><span class="stroke">NESS</span>
     </h1>
-    <p class="hero-sub">ESTD 1990 // 30 YRS // CYBER-SECURITY & CREATIVITY</p>
+    <p class="hero-sub">OLTRE 30 ANNI DI EVOLUZIONE DIGITALE, CREATIVITÀ E CYBER-SECURITY.</p>
 </header>
 
 <section class="grid-cmyk">
-    <div class="cmyk-card cyan">
+    <div class="cmyk-card" id="creative">
         <div class="card-body">
-            <i class="fa-solid fa-pen-nib"></i>
-            <span class="cmyk-label">CYAN_01</span>
-            <h2>CREATIVE IDENTITY</h2>
-            <p>Adobe Mastery. Stampa su Alluminio CMYK. Cianografiche.</p>
+            <div class="header-card">
+                <span class="cmyk-num c-text">01</span>
+                <i class="fa-solid fa-pen-nib c-text"></i>
+            </div>
+            <div class="content-card">
+                <h2>CREATIVE IDENTITY</h2>
+                <span class="sub-it">Identità Coordinata & Ingegneria di Stampa</span>
+                <p>Masterizzazione della Suite Adobe per la creazione di brand identity che lasciano il segno. La nostra forza risiede nella conoscenza profonda dei processi fisici: gestiamo cianografiche, prestampa e stampa su materiali complessi come pannelli in alluminio CMYK. Uniamo la precisione artigianale alla visione digitale contemporanea.</p>
+            </div>
         </div>
     </div>
-    <div class="cmyk-card magenta">
+
+    <div class="cmyk-card" id="digital">
         <div class="card-body">
-            <i class="fa-solid fa-code"></i>
-            <span class="cmyk-label">MAGENTA_02</span>
-            <h2>DIGITAL SOLUTIONS</h2>
-            <p>WP, Shopify, SEO Ranking. 30 anni di codice.</p>
+            <div class="header-card">
+                <span class="cmyk-num m-text">02</span>
+                <i class="fa-solid fa-code m-text"></i>
+            </div>
+            <div class="content-card">
+                <h2>DIGITAL SOLUTIONS</h2>
+                <span class="sub-it">Sviluppo Web & Strategie SEO</span>
+                <p>Progettazione di ecosistemi digitali su piattaforme WordPress, Shopify e PrestaShop. Non ci limitiamo al codice: ottimizziamo ogni pixel per il SEO Ranking, forti di un'esperienza ultra-trentennale che ci permette di interpretare gli algoritmi di ricerca per garantire un posizionamento organico dominante e duraturo per il tuo business.</p>
+            </div>
         </div>
     </div>
-    <div class="cmyk-card yellow">
+
+    <div class="cmyk-card" id="visual">
         <div class="card-body">
-            <i class="fa-solid fa-drone"></i>
-            <span class="cmyk-label">YELLOW_03</span>
-            <h2>VISUAL UNIT</h2>
-            <p>Studio Photo, Drone Service, AI Integration.</p>
+            <div class="header-card">
+                <span class="cmyk-num y-text">03</span>
+                <i class="fa-solid fa-camera-retro y-text"></i>
+            </div>
+            <div class="content-card">
+                <h2>VISUAL UNIT</h2>
+                <span class="sub-it">Produzione Audiovisiva & AI Integration</span>
+                <p>Servizi fotografici professionali in studio e shooting con drone per prospettive industriali uniche. Integriamo l'intelligenza artificiale generativa nei flussi creativi per potenziare il contenuto visuale e implementiamo Chatbot aziendali evoluti, addestrati sui dati della tua impresa per automatizzare la customer experience.</p>
+            </div>
         </div>
     </div>
-    <div class="cmyk-card black">
+
+    <div class="cmyk-card" id="security">
         <div class="card-body">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span class="cmyk-label">KEY_04</span>
-            <h2>CYBER-SECURITY</h2>
-            <p>Malware Recovery. Audit. Disaster Recovery.</p>
+            <div class="header-card">
+                <span class="cmyk-num k-text">04</span>
+                <i class="fa-solid fa-shield-halved k-text"></i>
+            </div>
+            <div class="content-card">
+                <h2>CYBER-SECURITY</h2>
+                <span class="sub-it">Interventi Sistemistici & Malware Recovery</span>
+                <p>Specialisti nel pronto intervento post-attacco ransomware e nella bonifica da malware. Eseguiamo audit di sicurezza scrupolosi e progettiamo piani di Disaster Recovery su misura per le PMI italiane. Proteggiamo la continuità operativa del tuo business, trasformando la vulnerabilità in una difesa proattiva e impenetrabile.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -88,9 +108,10 @@
 <script>
     const toggle = document.getElementById('menuToggle');
     const overlay = document.getElementById('menuOverlay');
+    const text = document.getElementById('triggerText');
     toggle.onclick = () => {
         overlay.classList.toggle('active');
-        toggle.querySelector('.trigger-text').innerText = overlay.classList.contains('active') ? 'CLOSE_CORE' : 'OPEN_CORE';
+        text.innerText = overlay.classList.contains('active') ? 'HOME' : 'CORE';
     };
 </script>
 </body>
