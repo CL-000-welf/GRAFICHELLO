@@ -43,21 +43,37 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .nav-massive li:nth-child(3) a:hover { color: var(--yellow); }
 .nav-massive li:nth-child(4) a:hover { color: #555; } /* Grigio per Cyber su fondo nero */
 
-/* Hero */
-.hero-brutal { padding: 120px 30px; border-bottom: 2px solid var(--black); }
+/* --- SEZIONE HERO --- */
+
+.hero-brutal { 
+    padding: 120px 30px; 
+    border-bottom: 2px solid var(--black); 
+}
+
 .hero-title { 
     font-size: clamp(3rem, 12vw, 10rem); 
     font-weight: 900; 
     line-height: 0.85; 
-    letter-spacing: 0.02em; /* FIX per distanziare N ed E */
+    /* Aumentiamo il respiro per evitare sovrapposizioni tra le lettere */
+    letter-spacing: 0.05em; 
     margin: 0; 
 }
+
 .stroke {
     color: transparent;
     -webkit-text-stroke: 2px var(--black);
+    /* Forza il browser a gestire meglio il disegno dei contorni */
+    paint-order: stroke fill;
     display: inline-block;
 }
-.hero-sub { margin-top: 30px; font-weight: 300; letter-spacing: 3px; font-size: 1.1rem; color: var(--gray-meta); }
+
+.hero-sub { 
+    margin-top: 30px; 
+    font-weight: 300; 
+    letter-spacing: 3px; 
+    font-size: 1.1rem; 
+    color: var(--gray-meta); 
+}
 
 /* CMYK Cards Base */
 .grid-cmyk { display: grid; grid-template-columns: repeat(2, 1fr); }
