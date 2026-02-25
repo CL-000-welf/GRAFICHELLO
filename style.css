@@ -1,0 +1,37 @@
+/* Reset e Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+/* Tipografia Mobile */
+h1 { font-size: 2.5rem; color: #1a1a1a; margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem; margin-top: 2rem; border-left: 4px solid #007bff; padding-left: 10px; }
+
+/* Layout Mobile First */
+section {
+    background: #fff;
+    margin-bottom: 1.5rem;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ul { list-style: none; margin-top: 10px; }
+li { margin-bottom: 10px; font-size: 0.95rem; }
+
+/* Desktop Breakpoint */
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    header { text-align: center; padding: 50px 0; }
+}
