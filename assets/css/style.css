@@ -62,15 +62,12 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     -webkit-text-stroke: 2px var(--black);
     display: inline-block;
     
-    /* TRUCCO FINALE: Arrotonda gli angoli e forza il limite della punta */
-    stroke-linejoin: round;
-    -webkit-stroke-linejoin: round;
-    stroke-miterlimit: 1;
+    /* TAGLIA NETTAMENTE LE PUNTE */
+    stroke-miterlimit: 2;
+    -webkit-stroke-miterlimit: 2;
     
-    /* Aumentiamo il margine solo tra le lettere per compensare lo spessore del bordo */
-    letter-spacing: 0.1em; 
-    
-    paint-order: stroke fill;
+    /* DISTANZIA SOLO QUESTA PAROLA */
+    letter-spacing: 0.15em; 
 }
 
 .hero-sub { 
