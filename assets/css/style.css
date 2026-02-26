@@ -55,12 +55,7 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .nav-massive li:nth-child(4) a:hover { color: #555; } /* Grigio per Cyber su fondo nero */
 
 /* --- SEZIONE HERO CON SVG --- */
-.hero-brutal { 
-    padding: 120px 30px; 
-    border-bottom: 2px solid var(--black); 
-}
-
-/* --- SEO: H1 Invisibile ma leggibile dai motori --- */
+/* SEO: Nascondi l'H1 ma lascialo per Google */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -69,46 +64,35 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
     border: 0;
 }
 
-/* --- Container dell'SVG --- */
+.hero-brutal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .business-svg-container {
     width: 100%;
-    max-width: 900px; /* Regola questa ampiezza per decidere quanto deve essere grande il logo */
-    margin-left: -5px; /* Leggero compenso ottico per allineare la W al testo sotto */
-    overflow: hidden; /* Taglia lo spazio vuoto in eccesso dell'SVG se necessario */
+    max-width: 1000px;
+    margin-left: -5%; /* Sposta il logo a sinistra per compensare il vuoto dell'SVG */
 }
 
 .business-svg {
     width: 100%;
     height: auto;
     display: block;
-    color: var(--text-color); /* L'SVG userà il colore del testo principale */
 }
 
-/* Effetto Hover opzionale per un tocco brutalista */
-.business-svg:hover .st1 {
-    fill: var(--accent-color); /* Se hai un colore d'accento (es. arancione o blu) */
-    transition: fill 0.3s ease;
-}
-
-/* --- Descrizione Hero --- */
 .hero-sub {
-    margin-top: 30px;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-/* Responsive per l'SVG */
-@media (max-width: 768px) {
-    .business-svg-container {
-        max-width: 100%;
-        margin-left: -5px; /* Meno rientro su mobile */
-    }
+    /* Il margine negativo serve a tirare su il testo perché l'SVG ha molto vuoto sotto */
+    margin-top: -38%; 
+    font-size: 1.1rem;
+    color: var(--gray-meta);
+    letter-spacing: 2px;
+    line-height: 1.5;
+    padding-left: 2px; /* Allineamento ottico con la W */
 }
 
 /* Gestione interruzioni riga: attive solo su mobile */
