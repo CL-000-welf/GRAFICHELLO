@@ -54,30 +54,41 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .nav-massive li:nth-child(3) a:hover { color: var(--yellow); }
 .nav-massive li:nth-child(4) a:hover { color: #555; } /* Grigio per Cyber su fondo nero */
 
-/* --- SEZIONE HERO --- */
+/* --- SEZIONE HERO CON SVG --- */
 .hero-brutal { 
     padding: 120px 30px; 
     border-bottom: 2px solid var(--black); 
 }
 
-.hero-title { 
-    font-size: clamp(3rem, 12vw, 10rem); 
-    font-weight: 900; 
-    line-height: 0.85; 
-    letter-spacing: 0.04em; 
-    margin: 0; 
+/* Contenitore per allineare l'SVG alla W del logo sopra */
+.business-svg-container {
+    display: block;
+    width: 100%;
+    /* Regola max-width per decidere quanto deve essere grande la scritta */
+    max-width: 900px; 
+    margin-left: -15px; /* Sposta leggermente a sinistra per allineare la W alla W del logo */
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.stroke {
-    color: white; /* Il corpo della lettera è bianco */
-    /* Creiamo un finto bordo sottile e interno usando l'ombra */
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-    display: inline-block;
-    letter-spacing: 0.05em;
+.business-full-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Gestione colori interni all'SVG */
+.st-fill {
+    fill: var(--black) !important;
+}
+
+.st-outline {
+    fill: none !important;
+    stroke: var(--black) !important;
+    /* Bordo sottile come richiesto */
+    stroke-width: 0.8px !important; 
+    stroke-linejoin: round;
+    stroke-linecap: round;
 }
 
 .hero-sub { 
@@ -86,6 +97,15 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     letter-spacing: 3px; 
     font-size: 1.1rem; 
     color: var(--gray-meta); 
+    max-width: 800px;
+}
+
+/* Responsive per l'SVG */
+@media (max-width: 768px) {
+    .business-svg-container {
+        max-width: 100%;
+        margin-left: -5px; /* Meno rientro su mobile */
+    }
 }
 
 /* Gestione interruzioni riga: attive solo su mobile */
@@ -103,10 +123,7 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     }
 }
 
-/* Fix per la N troppo distante: se 0.03em è ancora troppo, prova 0.02em */
-.hero-title span[style*="margin-right"] {
-    margin-right: 0.03em !important; 
-}
+
 
 /* CMYK Cards Base */
 .grid-cmyk { display: grid; grid-template-columns: repeat(2, 1fr); }
