@@ -60,46 +60,49 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     border-bottom: 2px solid var(--black); 
 }
 
-/* Contenitore per allineare l'SVG alla W del logo sopra */
-.business-svg-container {
-    display: block;
-    width: 100%;
-    /* Regola max-width per decidere quanto deve essere grande la scritta */
-    max-width: 900px; 
-    margin-left: -15px; /* Sposta leggermente a sinistra per allineare la W alla W del logo */
-    margin-top: 0;
-    margin-bottom: 20px;
+/* --- SEO: H1 Invisibile ma leggibile dai motori --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.business-full-svg {
+/* --- Container dell'SVG --- */
+.business-svg-container {
+    width: 100%;
+    max-width: 900px; /* Regola questa ampiezza per decidere quanto deve essere grande il logo */
+    margin-left: -5px; /* Leggero compenso ottico per allineare la W al testo sotto */
+    overflow: hidden; /* Taglia lo spazio vuoto in eccesso dell'SVG se necessario */
+}
+
+.business-svg {
     width: 100%;
     height: auto;
     display: block;
+    color: var(--text-color); /* L'SVG userà il colore del testo principale */
 }
 
-/* Gestione colori interni all'SVG */
-.st-fill {
-    fill: var(--black) !important;
+/* Effetto Hover opzionale per un tocco brutalista */
+.business-svg:hover .st1 {
+    fill: var(--accent-color); /* Se hai un colore d'accento (es. arancione o blu) */
+    transition: fill 0.3s ease;
 }
 
-.st-outline {
-    fill: none !important;
-    stroke: var(--black) !important;
-    /* Bordo sottile come richiesto */
-    stroke-width: 0.8px !important; 
-    stroke-linejoin: round;
-    stroke-linecap: round;
+/* --- Descrizione Hero --- */
+.hero-sub {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
 }
-
-.hero-sub { 
-    margin-top: 30px; 
-    font-weight: 300; 
-    letter-spacing: 3px; 
-    font-size: 1.1rem; 
-    color: var(--gray-meta); 
-    max-width: 800px;
-}
-
 /* Responsive per l'SVG */
 @media (max-width: 768px) {
     .business-svg-container {
