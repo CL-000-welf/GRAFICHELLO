@@ -67,15 +67,16 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 .business-svg-container {
     display: block;
     width: 100%;
-    max-width: 950px; /* Regola questa larghezza per far combaciare BUSINESS con la riga sopra */
-    margin: 10px 0;   /* Spazio sopra e sotto la scritta */
+    max-width: 850px; /* Regola questa larghezza per far combaciare BUSINESS con la riga sopra */
+    margin: 10px auto 10px 0;   /* Spazio sopra e sotto la scritta */
+    padding-left: 0;
 }
 
 /* Gestione dei tracciati dentro l'SVG */
 .business-outline {
     fill: none !important;            /* Svuota l'interno delle lettere */
     stroke: #1d1d1b !important;       /* Colore del bordo (nero Illustrator) */
-    stroke-width: 14px !important;    /* Spessore del bordo (regolabile) */
+    stroke-width: 7px !important;    /* Spessore del bordo (regolabile) */
     stroke-linejoin: round;           /* Arrotonda gli angoli degli incroci */
     stroke-linecap: round;            /* Arrotonda le estremità delle linee */
 }
@@ -126,6 +127,9 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 /* Fix per la N troppo distante: se 0.03em è ancora troppo, prova 0.02em */
 .hero-title span[style*="margin-right"] {
     margin-right: 0.03em !important; 
+    /**/
+    text-align: left; /* Forza l'allineamento a sinistra di tutto il blocco */
+    padding-left: 0;
 }
 
 /* CMYK Cards Base */
