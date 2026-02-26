@@ -63,12 +63,29 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     border-bottom: 2px solid var(--black); 
 }
 
-.hero-title { 
-    font-size: clamp(3rem, 12vw, 10rem); 
-    font-weight: 900; 
-    line-height: 0.85; 
-    letter-spacing: 0.04em; 
-    margin: 0; 
+/* Il contenitore che ospita l'SVG */
+.business-svg-container {
+    display: block;
+    width: 100%;
+    max-width: 950px; /* Regola questa larghezza per far combaciare BUSINESS con la riga sopra */
+    margin: 10px 0;   /* Spazio sopra e sotto la scritta */
+}
+
+/* Gestione dei tracciati dentro l'SVG */
+.business-outline {
+    fill: none !important;            /* Svuota l'interno delle lettere */
+    stroke: #1d1d1b !important;       /* Colore del bordo (nero Illustrator) */
+    stroke-width: 14px !important;    /* Spessore del bordo (regolabile) */
+    stroke-linejoin: round;           /* Arrotonda gli angoli degli incroci */
+    stroke-linecap: round;            /* Arrotonda le estremità delle linee */
+}
+
+/* Per il responsive: su schermi piccoli si adatta da solo */
+@media (max-width: 768px) {
+    .business-svg-container {
+        max-width: 100%;
+        margin-top: 5px;
+    }
 }
 
 .stroke {
