@@ -1,3 +1,9 @@
+
+
+
+
+STYLE
+
 :root {
     --cyan: #00aeef;
     --magenta: #ec008c;
@@ -24,14 +30,7 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 
 /* Nav & CORE/HOME */
 .nav-elite { padding: 30px; border-bottom: 2px solid var(--black); position: sticky; top: 0; background: white; z-index: 1000; }
-/* --- HEADER & LOGO --- */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Aumentato il gap per allontanare GRAFICH=LLO da CORE su mobile */
-    gap: 20px; 
-}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
 .nav-trigger { cursor: pointer; display: flex; align-items: center; gap: 12px; }
 .trigger-text { font-weight: 900; font-size: 0.9rem; letter-spacing: 2px; }
 .dot { width: 14px; height: 14px; background: var(--black); border-radius: 50%; transition: 0.3s; }
@@ -56,49 +55,52 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     border-bottom: 2px solid var(--black); 
 }
 
-/* --- HERO TITOLO (WEB YOUR) --- */
 .hero-title { 
     font-size: clamp(3rem, 12vw, 10rem); 
     font-weight: 900; 
     line-height: 0.85; 
+    letter-spacing: 0.04em; 
     margin: 0; 
 }
 
-/* --- BUSINESS VETTORIALE (SVG) --- */
-/* Sostituisce la vecchia classe .stroke */
-.business-svg {
-    width: 100%;
-    height: auto;
-    max-width: 800px; /* Regola in base a quanto vuoi grande BUSINESS */
-    display: block;
-    margin-top: -5px; 
+.stroke {
+    color: white; /* Il corpo della lettera è bianco */
+    /* Creiamo un finto bordo sottile e interno usando l'ombra */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    display: inline-block;
+    letter-spacing: 0.05em;
 }
 
-.stroke-vettoriale {
-    font-family: 'Lexend Deca', sans-serif;
-    font-weight: 900;
-    font-size: 80px; /* Dimensione interna all'SVG */
-    fill: none;
-    stroke: var(--black);
-    stroke-width: 1.2px; /* Stroke sottile e pulito, non sgrana mai */
-    letter-spacing: 1px;
-}
-
-/* --- PAYOFF WALL STREET --- */
 .hero-sub { 
     margin-top: 30px; 
-    font-weight: 400; 
-    letter-spacing: 1px; 
+    font-weight: 300; 
+    letter-spacing: 3px; 
     font-size: 1.1rem; 
-    color: var(--black); /* Nero pieno per autorità */
-    line-height: 1.4;
-    text-transform: uppercase;
+    color: var(--gray-meta); 
 }
 
-.m-break { display: block; }
+/* Gestione interruzioni riga: attive solo su mobile */
+.m-break {
+    display: block;
+}
 
+/* Su schermi grandi (Desktop), ignoriamo gli 'a capo' per far scorrere il testo */
 @media (min-width: 768px) {
-    .m-break { display: none; }
+    .m-break {
+        display: none;
+    }
+    .hero-sub {
+        max-width: 800px; /* Evita che la riga diventi infinita */
+    }
+}
+
+/* Fix per la N troppo distante: se 0.03em è ancora troppo, prova 0.02em */
+.hero-title span[style*="margin-right"] {
+    margin-right: 0.03em !important; 
 }
 
 /* CMYK Cards Base */
@@ -151,3 +153,5 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     .cmyk-card { padding: 40px 30px; }
 }
 .footer-raw { padding: 60px 30px; text-align: center; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; }
+
+
