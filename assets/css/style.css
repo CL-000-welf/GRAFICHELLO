@@ -57,32 +57,16 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     margin: 0; 
 }
 
-/* --- FIX BUSINESS STROKE VETTORIALE --- */
-.business-svg-vettore {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-top: -5px; /* Compensa l'altezza della riga */
-    overflow: visible;
-}
-
-.scritta-stroke {
-    font-family: 'Lexend Deca', sans-serif;
-    font-weight: 900;
-    font-size: 82px;
-    fill: none;
-    stroke: var(--black);
-    stroke-width: 1.2px; /* Bordo sottile e tecnico */
-    letter-spacing: 4px; /* Spaziatura precisa */
-    paint-order: stroke fill;
-}
-
-/* Fix per Mobile: riduciamo lo spazio tra le lettere per non farlo uscire dallo schermo */
-@media (max-width: 480px) {
-    .scritta-stroke {
-        font-size: 85px;
-        letter-spacing: 1px;
-    }
+.stroke {
+    color: white; /* Il corpo della lettera è bianco */
+    /* Creiamo un finto bordo sottile e interno usando l'ombra */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    display: inline-block;
+    letter-spacing: 0.05em;
 }
 
 .hero-sub { 
@@ -163,5 +147,4 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
     .cmyk-card { padding: 40px 30px; }
 }
 .footer-raw { padding: 60px 30px; text-align: center; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; }
-
 
