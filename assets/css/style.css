@@ -58,16 +58,16 @@ body { background: var(--white); font-family: 'Lexend Deca', sans-serif; margin:
 }
 
 .stroke {
-    color: white; /* Il corpo della lettera è bianco */
-    /* Creiamo un finto bordo sottile e interno usando l'ombra */
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+    color: transparent; /* Scompare il corpo, resta solo il bordo */
+    -webkit-text-stroke: 1.5px var(--black); /* Bordo netto e sottile */
     display: inline-block;
     letter-spacing: 0.05em;
+    /* Questo evita che i bordi si sovrappongano male all'interno */
+    paint-order: stroke fill; 
+    stroke-linejoin: round;
 }
+
+/*  */
 
 .hero-sub { 
     margin-top: 30px; 
